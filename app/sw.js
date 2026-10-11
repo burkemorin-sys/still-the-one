@@ -1,5 +1,5 @@
 /* Still the One — offline cache for the demo app shell */
-const CACHE='sto-app-v2';
+const CACHE='sto-app-v3';
 const ASSETS=[
   './checkout.html',
   './date-dance.html',
