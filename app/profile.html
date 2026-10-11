@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* Demo-only sign-in check (test mode). Not real security. */(function(){var d=document.documentElement,a=null;try{a=localStorage.getItem('stillTheOne.auth.v1')}catch(e){}d.className+=(a?' is-in':' is-out');if(!a){d.className+=' guarded';location.replace('login.html?next='+encodeURIComponent((location.pathname.split('/').pop()||'home.html')+location.search+location.hash));}})();</script>
 <title>My Profile · Still the One</title>
 <meta name="theme-color" content="#FBF7F1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Still the One">
@@ -105,11 +106,12 @@
 <div class="save-bar"><div><b>Save your profile</b><small id="last-saved">Not saved yet · stays in this browser only</small></div>
  <div class="save-actions"><button type="button" class="btn btn-ghost" id="clear-profile">Clear saved data</button><button type="submit" class="btn btn-primary"><svg width="14" height="14" aria-hidden="true"><use href="#check"/></svg>Save profile</button></div></div>
 </form>
+<div class="card pf-session"><span class="avatars"><span class="av a" data-you-initial>E</span><span class="av b" data-partner-initial>J</span></span><div><small>Signed in as</small><b data-auth-email>you@example.com</b></div><button type="button" class="btn btn-ghost" data-logout>Log out</button></div>
 <button type="button" class="clear-link" data-clear-profile>Clear saved data from this browser</button>
 </div>
 </div>
-<nav class="tabbar" aria-label="Tabs"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home</a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile<span class=dot></span></a></nav>
+<nav class="tabbar" aria-label="Tabs" data-when="in"><a href="home.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home</a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile<span class=dot></span></a></nav><nav class="tabbar" aria-label="Guest tabs" data-when="out"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Welcome</a><a href="browse.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#search"/></svg>Browse</a><a href="registry.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Registry</a><a href="newlyweds.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#ring"/></svg>Newlyweds</a><a href="login.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Log in</a></nav>
 
-<script src="assets/common.js"></script>
+<script src="assets/catalog.js"></script><script src="assets/common.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </body></html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* Demo-only sign-in check (test mode). Not real security. */(function(){var d=document.documentElement,a=null;try{a=localStorage.getItem('stillTheOne.auth.v1')}catch(e){}d.className+=(a?' is-in':' is-out');})();</script>
 <title>Membership · Still the One</title>
 <meta name="theme-color" content="#FBF7F1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Still the One">
@@ -44,7 +45,7 @@
 <div class="app ">
 <div class="app-strip" role="note"><span class="test-pill" title="This is a demo. No real payments are processed.">TEST MODE <span>· demo only, no real charges</span></span></div>
 <div class="content">
-<div class="flow-head"><a href="index.html" class="icon-btn" aria-label="Back"><svg width="20" height="20" aria-hidden="true"><use href="#back"/></svg></a><div class="step-dots"><i class="on"></i><i></i><i></i></div><span class="ex-note">Example pricing</span></div>
+<div class="flow-head"><a href="home.html" class="icon-btn" aria-label="Back" data-when="in"><svg width="20" height="20" aria-hidden="true"><use href="#back"/></svg></a><a href="index.html" class="icon-btn" aria-label="Back" data-when="out"><svg width="20" height="20" aria-hidden="true"><use href="#back"/></svg></a><div class="step-dots"><i class="on"></i><i></i><i></i></div><span class="ex-note">Example pricing</span></div>
 <div><div class="eyebrow rose">Membership</div><h1 class="h-title" style="margin-top:6px">Keep choosing <em>each other</em></h1></div>
 <div class="seg"><button type="button" class="on" data-billing="monthly">Monthly</button><button type="button" data-billing="yearly">Yearly<small>2 MONTHS FREE</small></button></div>
 <div data-plans role="radiogroup" aria-label="Membership plans" style="display:flex;flex-direction:column;gap:12px"><div class="card plan " data-plan="sweetheart" role="radio" tabindex="0" aria-checked="false">
@@ -61,8 +62,8 @@
 <div class="plan-cta"><a href="checkout.html?plan=devoted" class="btn btn-primary btn-block" data-plan-cta><span data-plan-cta-label>Continue with Devoted</span> <svg width="14" height="14" aria-hidden="true"><use href="#chev"/></svg></a><p class="fine">Example prices for illustration · Cancel anytime · Test mode</p></div>
 </div>
 </div>
-<nav class="tabbar" aria-label="Tabs"><a href="index.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home<span class=dot></span></a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav>
+<nav class="tabbar" aria-label="Tabs" data-when="in"><a href="home.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home<span class=dot></span></a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav><nav class="tabbar" aria-label="Guest tabs" data-when="out"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Welcome</a><a href="browse.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#search"/></svg>Browse</a><a href="registry.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Registry</a><a href="newlyweds.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#ring"/></svg>Newlyweds</a><a href="login.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Log in</a></nav>
 
-<script src="assets/common.js"></script>
+<script src="assets/catalog.js"></script><script src="assets/common.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </body></html>

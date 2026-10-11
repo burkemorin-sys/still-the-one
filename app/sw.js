@@ -1,6 +1,7 @@
 /* Still the One — offline cache for the demo app shell */
-const CACHE='sto-app-v3';
+const CACHE='sto-app-v4';
 const ASSETS=[
+  './browse.html',
   './checkout.html',
   './date-dance.html',
   './date-film.html',
@@ -13,13 +14,19 @@ const ASSETS=[
   './dates.html',
   './flowers.html',
   './gifts.html',
+  './guest-checkout.html',
+  './home.html',
   './index.html',
+  './login.html',
+  './newlyweds.html',
   './plans.html',
   './profile.html',
+  './registry.html',
   './reservations.html',
   './assets/common.css',
   './assets/app.css',
   './assets/common.js',
+  './assets/catalog.js',
   './manifest.json',
   './icons/icon.svg'
 ];

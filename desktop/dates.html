@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Demo-only sign-in check (test mode). Not real security. */(function(){var d=document.documentElement,a=null;try{a=localStorage.getItem('stillTheOne.auth.v1')}catch(e){}d.className+=(a?' is-in':' is-out');if(!a){d.className+=' guarded';location.replace('login.html?next='+encodeURIComponent((location.pathname.split('/').pop()||'home.html')+location.search+location.hash));}})();</script>
 <title>Pre-Planned Dates · Still the One</title><meta name="description" content="Still the One — date nights, gifts and flowers for married couples. Demo site in test mode.">
 <meta name="theme-color" content="#FBF7F1"><link rel="icon" href="../app/icons/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/common.css"><link rel="stylesheet" href="assets/desktop.css"></head>
@@ -40,11 +41,17 @@
 </defs></svg>
 <div class="test-strip" role="note"><div class="wrap"><span class="test-pill" title="This is a demo. No real payments are processed.">TEST MODE <span>· demo only, no real charges</span></span><small>Example data, prices and retailers. Checkout never charges anything.</small></div></div>
 <header class="nav"><div class="wrap">
-  <a href="index.html" class="brand" aria-label="Still the One home"><span class="brand-mark"><svg width="22" height="22" aria-hidden="true"><use href="#ring"/></svg></span><b>Still <em>the</em> One</b></a>
-  <nav class="nav-links" aria-label="Main"><a href="index.html" class="">Home</a><a href="dates.html" class="on">Pre-Planned Dates</a><a href="gifts.html" class="">Gifts</a><a href="flowers.html" class="">Flowers</a><a href="reservations.html" class="">Reservations</a><a href="plans.html" class="">Membership</a></nav>
-  <div class="nav-right">
+  <a href="home.html" class="brand" data-when="in" aria-label="Still the One home"><span class="brand-mark"><svg width="22" height="22" aria-hidden="true"><use href="#ring"/></svg></span><b>Still <em>the</em> One</b></a>
+  <a href="index.html" class="brand" data-when="out" aria-label="Still the One welcome"><span class="brand-mark"><svg width="22" height="22" aria-hidden="true"><use href="#ring"/></svg></span><b>Still <em>the</em> One</b></a>
+  <nav class="nav-links" aria-label="Main" data-when="in"><a href="home.html" class="">Home</a><a href="dates.html" class="on">Pre-Planned Dates</a><a href="gifts.html" class="">Gifts</a><a href="flowers.html" class="">Flowers</a><a href="reservations.html" class="">Reservations</a><a href="plans.html" class="">Membership</a></nav>
+  <nav class="nav-links" aria-label="Guest" data-when="out"><a href="browse.html" class="">Browse</a><a href="browse.html#gifts" class="">Gifts</a><a href="browse.html#flowers" class="">Flowers</a><a href="newlyweds.html" class="">Newlyweds</a><a href="registry.html" class="">Gift registry</a><a href="plans.html" class="">Membership</a></nav>
+  <div class="nav-right" data-when="in">
     <a href="profile.html" class="prof-link"><span class="avatars"><span class="av a" data-you-initial>E</span><span class="av b" data-partner-initial>J</span></span>My Profile</a>
-    <a href="plans.html" class="btn btn-primary">Join · Example</a>
+    <button type="button" class="btn btn-ghost nav-logout" data-logout>Log out</button>
+  </div>
+  <div class="nav-right" data-when="out">
+    <a href="login.html" class="btn btn-ghost nav-login">Log in</a>
+    <a href="plans.html" class="btn btn-primary nav-join">Join</a>
   </div></div></header>
 <main><div class="wrap" data-filter-scope>
 <div class="page-head split"><div><div class="eyebrow rose">Curated for you two</div><h1 class="h-title">Pre-Planned <em>Dates</em></h1>
@@ -106,12 +113,14 @@
 <div class="empty card" data-filter-empty hidden><b>No dates in this category yet</b>Try another filter.</div>
 </div></main>
 <footer class="foot"><div class="wrap">
-  <div><a href="index.html" class="brand"><span class="brand-mark" style="width:36px;height:36px"><svg width="18" height="18" aria-hidden="true"><use href="#ring"/></svg></span><b style="font-size:20px">Still <em>the</em> One</b></a>
+  <div><a href="home.html" class="brand" data-when="in"><span class="brand-mark" style="width:36px;height:36px"><svg width="18" height="18" aria-hidden="true"><use href="#ring"/></svg></span><b style="font-size:20px">Still <em>the</em> One</b></a><a href="index.html" class="brand" data-when="out"><span class="brand-mark" style="width:36px;height:36px"><svg width="18" height="18" aria-hidden="true"><use href="#ring"/></svg></span><b style="font-size:20px">Still <em>the</em> One</b></a>
   <p>For the married — date night, every night. A concept demo with example content only.</p></div>
-  <div><h5>Plan</h5><a href="dates.html">Pre-Planned Dates</a><a href="date-italian.html">Featured date</a><a href="gifts.html">Gifts</a><a href="flowers.html">Flowers</a><a href="reservations.html">Reserve in St. George</a></div>
-  <div><h5>Account</h5><a href="profile.html">My Profile</a><a href="plans.html">Membership</a><a href="checkout.html">Checkout</a></div>
+  <div data-when="in"><h5>Plan</h5><a href="dates.html">Pre-Planned Dates</a><a href="date-italian.html">Featured date</a><a href="gifts.html">Gifts</a><a href="flowers.html">Flowers</a><a href="reservations.html">Reserve in St. George</a></div>
+  <div data-when="out"><h5>Explore</h5><a href="browse.html">Browse as a guest</a><a href="browse.html#gifts">Gifts</a><a href="browse.html#flowers">Flowers</a><a href="registry.html">Gift registry</a></div>
+  <div data-when="in"><h5>Account</h5><a href="profile.html">My Profile</a><a href="plans.html">Membership</a><a href="registry.html">Our gift registry</a><a href="#logout" data-logout>Log out</a></div>
+  <div data-when="out"><h5>Account</h5><a href="login.html">Member login</a><a href="newlyweds.html">Newlyweds sign-up</a><a href="plans.html">Membership</a></div>
   <div><h5>Also</h5><a href="../app/">Mobile app version</a><a href="../mockup.html">Original app mockup</a><a href="../subscription.html">Membership mockup</a><a href="../">All versions</a></div>
-  <div class="legal"><span>© Still the One · concept demo</span><span><b style="color:var(--gold-3)">TEST MODE</b> · prices are examples · retailer names are labels; links are placeholders · no real payments</span></div>
+  <div class="legal"><span>© Still the One · concept demo</span><span><b style="color:var(--gold-3)">TEST MODE</b> · prices are examples · retailer names are labels; links are placeholders · no real payments · sign-in is a client-side demo, not real security</span></div>
 </div></footer>
 
-<script src="assets/common.js"></script></body></html>
+<script src="assets/catalog.js"></script><script src="assets/common.js"></script></body></html>

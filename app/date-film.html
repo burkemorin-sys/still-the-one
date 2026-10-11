@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* Demo-only sign-in check (test mode). Not real security. */(function(){var d=document.documentElement,a=null;try{a=localStorage.getItem('stillTheOne.auth.v1')}catch(e){}d.className+=(a?' is-in':' is-out');if(!a){d.className+=' guarded';location.replace('login.html?next='+encodeURIComponent((location.pathname.split('/').pop()||'home.html')+location.search+location.hash));}})();</script>
 <title>Blanket Fort Film Festival · Still the One</title>
 <meta name="theme-color" content="#FBF7F1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Still the One">
@@ -56,8 +57,8 @@
  <a href="plans.html" class="btn btn-primary btn-block" style="height:48px;margin-top:14px">Plan this date <svg width="14" height="14" aria-hidden="true"><use href="#chev"/></svg></a>
 </div>
 </div>
-<nav class="tabbar" aria-label="Tabs"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home</a><a href="dates.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates<span class=dot></span></a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav>
+<nav class="tabbar" aria-label="Tabs" data-when="in"><a href="home.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home</a><a href="dates.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates<span class=dot></span></a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav><nav class="tabbar" aria-label="Guest tabs" data-when="out"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Welcome</a><a href="browse.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#search"/></svg>Browse</a><a href="registry.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Registry</a><a href="newlyweds.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#ring"/></svg>Newlyweds</a><a href="login.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Log in</a></nav>
 
-<script src="assets/common.js"></script>
+<script src="assets/catalog.js"></script><script src="assets/common.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </body></html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* Demo-only sign-in check (test mode). Not real security. */(function(){var d=document.documentElement,a=null;try{a=localStorage.getItem('stillTheOne.auth.v1')}catch(e){}d.className+=(a?' is-in':' is-out');})();</script>
 <title>Checkout · Still the One</title>
 <meta name="theme-color" content="#FBF7F1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Still the One">
@@ -79,7 +80,7 @@
 <p class="fine"><b style="color:var(--gold-3)">TEST MODE</b> · this button never charges — you’ll see a confirmation instead.</p></div>
 </div>
 </div>
-<nav class="tabbar" aria-label="Tabs"><a href="index.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home<span class=dot></span></a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav>
+<nav class="tabbar" aria-label="Tabs" data-when="in"><a href="home.html" class="tab on" aria-current=page><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Home<span class=dot></span></a><a href="dates.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#cal"/></svg>Dates</a><a href="gifts.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Gifts</a><a href="flowers.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#flower"/></svg>Flowers</a><a href="profile.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Profile</a></nav><nav class="tabbar" aria-label="Guest tabs" data-when="out"><a href="index.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#home"/></svg>Welcome</a><a href="browse.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#search"/></svg>Browse</a><a href="registry.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#gift"/></svg>Registry</a><a href="newlyweds.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#ring"/></svg>Newlyweds</a><a href="login.html" class="tab"><svg width="24" height="24" aria-hidden="true"><use href="#user"/></svg>Log in</a></nav>
 <div class="modal" id="welcome" role="dialog" aria-modal="true" aria-labelledby="w-title"><div class="modal-box">
 <div class="w-hero"><button class="close" data-close-modal aria-label="Close"><svg width="16" height="16" aria-hidden="true"><use href="#close"/></svg></button>
   <svg width="130" height="96" viewBox="0 0 150 110" fill="none" style="margin-top:6px"><circle cx="58" cy="58" r="36" stroke="#E3C98F" stroke-width="3"/><circle cx="92" cy="58" r="36" stroke="rgba(227,201,143,.6)" stroke-width="3"/><path d="M75 34s-9-5.5-11.2-11c-1.5-4 1.1-8 5.2-8 2.4 0 4.3 1.3 6 3.5 1.7-2.2 3.6-3.5 6-3.5 4.1 0 6.7 4 5.2 8C84 28.5 75 34 75 34z" fill="#F3D9D4"/></svg>
@@ -93,6 +94,6 @@
   <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px"><a href="dates.html" class="btn btn-primary btn-block" style="height:48px">Plan your first date <svg width="14" height="14" aria-hidden="true"><use href="#chev"/></svg></a>
   <button class="btn btn-ghost btn-block" data-close-modal>Back to checkout</button></div>
 </div></div></div>
-<script src="assets/common.js"></script>
+<script src="assets/catalog.js"></script><script src="assets/common.js"></script>
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </body></html>
