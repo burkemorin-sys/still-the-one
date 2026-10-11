@@ -359,3 +359,5 @@ svg{flex:none}
 .v-actions .btn{height:40px;font-size:13px;padding:0 16px;flex:1}
 .v-note{font-size:10.5px;color:var(--muted);margin-top:7px;text-align:center}
 .v-web{color:var(--wine);font-weight:600}
+
+.alc-seg button{white-space:normal;text-align:center;line-height:1.15;min-height:40px;height:auto;padding:4px 8px}

@@ -130,7 +130,7 @@ if(co){
 /* ---------- profile ---------- */
 var form=$('#profile-form');
 if(form){
-  var FIELDS=['yourName','yourEmail','yourPhone','addr1','addr2','city','state','zip','country','partnerName','partnerEmail','partnerPhone','yourBirthday','partnerBirthday','anniversary','cardName','cardExp','paypalEmail','bankHolder','bankName'];
+  var FIELDS=['yourName','yourEmail','yourPhone','addr1','addr2','city','state','zip','country','partnerName','partnerEmail','partnerPhone','alcohol','yourBirthday','partnerBirthday','anniversary','cardName','cardExp','paypalEmail','bankHolder','bankName'];
   var rows=$('#idates'), tpl=$('#idate-tpl');
   function addRow(d){d=d||{};var n=tpl.content.firstElementChild.cloneNode(true);
     $('[name=label]',n).value=d.label||'';$('[name=date]',n).value=d.date||'';$('[name=remind]',n).value=d.remind!=null?d.remind:7;
@@ -150,9 +150,11 @@ if(form){
     var b=$('#bank-saved'); if(s.bankLast4){acct.value='';acct.placeholder='•••••••• '+s.bankLast4;b.hidden=false;b.querySelector('span').textContent='Account ending in '+s.bankLast4+' on file (last 4 only)'}else b.hidden=true;
     routing.value='';
   }
+  function setAlc(v){form.elements.alcohol.value=v||'';$$('[data-alcohol]',form).forEach(function(b){var on=b.getAttribute('data-alcohol')===v;b.classList.toggle('on',on);b.setAttribute('aria-checked',on)})}
+  $$('[data-alcohol]',form).forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();setAlc(b.getAttribute('data-alcohol'))})});
   function fill(s){FIELDS.forEach(function(f){if(form.elements[f]&&s[f]!=null)form.elements[f].value=s[f]});
     rows.innerHTML='';(s.importantDates&&s.importantDates.length?s.importantDates:[]).forEach(addRow);
-    setPM(s.paymentMethod||'card');showSaved(s);}
+    setPM(s.paymentMethod||'card');setAlc(s.alcohol||'');showSaved(s);}
   var saved=loadProfile();
   if(saved){fill(saved);$('#last-saved').textContent='Loaded from this browser · last saved '+new Date(saved.savedAt).toLocaleString();}
   else{ // example defaults so the page doesn't look empty
