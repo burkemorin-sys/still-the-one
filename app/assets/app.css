@@ -146,3 +146,4 @@ body{background:radial-gradient(1200px 600px at 10% -10%, #F7E3DE 0%, transparen
 .modal{align-items:end;padding:0}
 .modal-box{border-radius:28px 28px 0 0;width:min(430px,100%);max-height:94dvh}
 @media (min-height:700px) and (min-width:520px){.modal{align-items:center;padding:20px}.modal-box{border-radius:28px}}
+.venue .v-art{height:78px}.venue .v-art .v-em{font-size:34px;top:14px}

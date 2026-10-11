@@ -16,6 +16,7 @@ const ASSETS=[
   './index.html',
   './plans.html',
   './profile.html',
+  './reservations.html',
   './assets/common.css',
   './assets/app.css',
   './assets/common.js',

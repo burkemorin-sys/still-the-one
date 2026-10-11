@@ -347,3 +347,15 @@ svg{flex:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast svg{color:var(--gold-2)}
 .field:has(.brands)>span.l,.field:has(.brands) input{padding-right:104px}
+/* Reservations (St. George) */
+.venue{overflow:hidden;display:flex;flex-direction:column}
+.v-art{height:110px;position:relative;display:flex;align-items:flex-end;padding:12px}
+.v-art .v-em{position:absolute;right:20px;top:18px;font-size:44px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.2))}
+.v-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.v-town{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--rose)}
+.v-body h4{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.2;margin-top:5px}
+.v-body p{font-size:12.5px;line-height:1.5;color:var(--muted);margin:6px 0 12px}
+.v-actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.v-actions .btn{height:40px;font-size:13px;padding:0 16px;flex:1}
+.v-note{font-size:10.5px;color:var(--muted);margin-top:7px;text-align:center}
+.v-web{color:var(--wine);font-weight:600}

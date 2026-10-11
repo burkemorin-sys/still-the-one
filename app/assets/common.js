@@ -39,7 +39,7 @@ $$('[data-filter-scope]').forEach(function(scope){
       it.hidden=!ok; if(ok)shown++;
     });
     if(empty)empty.hidden=shown>0;
-    var c=$('[data-filter-count]',scope); if(c)c.textContent=shown+(shown===1?' bouquet':' bouquets');
+    var c=$('[data-filter-count]',scope); if(c){var nn=c.getAttribute('data-noun')||'bouquet';c.textContent=shown+' '+nn+(shown===1?'':'s')}
   }
   $$('[data-filter]',scope).forEach(function(group){
     var name=group.getAttribute('data-filter');
